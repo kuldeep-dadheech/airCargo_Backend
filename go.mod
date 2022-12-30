@@ -14,8 +14,11 @@ require (
 	github.com/pressly/goose/v3 v3.7.0
 	github.com/sanity-io/litter v1.5.5
 	golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa
-	google.golang.org/grpc v1.49.0
-	google.golang.org/protobuf v1.28.1
+)
+
+require (
+	github.com/google/go-cmp v0.5.6 // indirect
+	google.golang.org/protobuf v1.28.1 // indirect
 )
 
 require (
@@ -25,7 +28,6 @@ require (
 	github.com/go-playground/universal-translator v0.18.0 // indirect
 	github.com/go-playground/validator/v10 v10.10.0 // indirect
 	github.com/goccy/go-json v0.9.7 // indirect
-	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
 	github.com/jackc/pgconn v1.13.0 // indirect
 	github.com/jackc/pgio v1.0.0 // indirect
@@ -43,6 +45,5 @@ require (
 	golang.org/x/net v0.0.0-20220812174116-3211cb980234 // indirect
 	golang.org/x/sys v0.0.0-20220811171246-fbc7d0a398ab // indirect
 	golang.org/x/text v0.3.7 // indirect
-	google.golang.org/genproto v0.0.0-20200526211855-cb27e3aa2013 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )

@@ -3,7 +3,6 @@ package main
 import (
 	"aircargo/cmd/api"
 	"aircargo/cmd/migrations"
-	"aircargo/cmd/rpc"
 	"aircargo/internal/configs"
 	"aircargo/internal/configs/local"
 	"aircargo/internal/configs/production"
@@ -41,9 +40,9 @@ func main() {
 	case "http-api":
 		config := getConfig(envTier, API)
 		api.Initialize(config)
-	case "rpc-server":
-		config := getConfig(envTier, RPC)
-		rpc.Initialize(config)
+	// case "rpc-server":
+	// 	config := getConfig(envTier, RPC)
+	// 	rpc.Initialize(config)
 	default:
 		panic("could not understand the program that needed to be run")
 	}
