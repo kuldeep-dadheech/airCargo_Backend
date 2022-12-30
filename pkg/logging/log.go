@@ -51,7 +51,7 @@ func CreateLog(
 	refs := map[string]string{}
 
 	if logError != nil {
-		references["errMessage"] = *logError
+		references["errMesaircargo"] = *logError
 		b := make([]byte, 2048) // adjust buffer size to be larger than expected stack
 		n := runtime.Stack(b, false)
 		references["stackTrace"] = string(b[:n])

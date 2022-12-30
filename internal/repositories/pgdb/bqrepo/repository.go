@@ -1,10 +1,10 @@
 package bqrepo
 
 import (
+	"aircargo/internal/core/domain/repositories/rdbms"
 	"fmt"
-	"sagebackend/internal/core/domain/repositories/rdbms"
 
-	"sagebackend/pkg/logging"
+	"aircargo/pkg/logging"
 
 	"github.com/doug-martin/goqu/v9"
 )

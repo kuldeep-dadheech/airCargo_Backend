@@ -1,8 +1,8 @@
 package chargesrepo
 
 import (
-	"sagebackend/internal/core/domain/repositories/rdbms"
-	"sagebackend/pkg/logging"
+	"aircargo/internal/core/domain/repositories/rdbms"
+	"aircargo/pkg/logging"
 
 	"github.com/doug-martin/goqu/v9"
 )

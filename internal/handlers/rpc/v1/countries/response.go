@@ -1,10 +1,10 @@
 package countries
 
 import (
+	"aircargo/internal/core/domain/services"
 	"time"
-	"sagebackend/internal/core/domain/services"
 
-	pb "sagebackend/proto/gen/app/v1"
+	pb "aircargo/proto/gen/app/v1"
 )
 
 func mapServiceDomainToResponse(

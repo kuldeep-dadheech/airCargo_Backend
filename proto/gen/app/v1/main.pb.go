@@ -162,7 +162,7 @@ func file_app_v1_main_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_app_v1_main_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   0,
+			NumMesaircargos:   0,
 			NumExtensions: 0,
 			NumServices:   2,
 		},

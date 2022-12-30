@@ -1,8 +1,8 @@
 package currencies
 
 import (
+	pb "aircargo/proto/gen/app/v1"
 	"context"
-	pb "sagebackend/proto/gen/app/v1"
 
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

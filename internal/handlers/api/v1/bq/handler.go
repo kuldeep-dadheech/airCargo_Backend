@@ -1,8 +1,9 @@
 package bq
 
 import (
-	"sagebackend/pkg/logging"
- "sagebackend/internal/core/ports"
+	"aircargo/internal/core/ports"
+	"aircargo/pkg/logging"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,7 +16,7 @@ type RoutesHandler interface {
 }
 
 type Handler struct {
-	logger logging.Logger
+	logger    logging.Logger
 	bqService ports.BqService
 }
 
@@ -24,7 +25,7 @@ func NewHandler(
 	bqService ports.BqService,
 ) *Handler {
 	return &Handler{
-		logger: logger,
+		logger:    logger,
 		bqService: bqService,
 	}
 }

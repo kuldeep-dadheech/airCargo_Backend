@@ -5,13 +5,13 @@ package app.v1;
 option java_multiple_files = true; 
 option go_package = "./protogen/app/v1";
 
-message ErrorResponse {
+mesaircargo ErrorResponse {
   string code = 1;
-  string message = 2;
+  string mesaircargo = 2;
   repeated InputError input_errors = 3;
 }
 
-message InputError {
+mesaircargo InputError {
   string field = 1;
   string error = 2;
 }

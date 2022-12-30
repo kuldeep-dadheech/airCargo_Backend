@@ -1,16 +1,13 @@
 package users
 
 import (
+	"aircargo/internal/core/utils/errors"
 	"fmt"
 	"net/http"
-	"sagebackend/internal/core/utils/errors"
-
 
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
 )
-
-
 
 type signinResponse struct {
 	UserId   int    `json:"user_id"`
@@ -18,7 +15,7 @@ type signinResponse struct {
 }
 
 type SigninRequest struct {
-	Email string `json:"email" required:"true"`
+	Email    string `json:"email" required:"true"`
 	Password string `json:"password" required:"true"`
 }
 

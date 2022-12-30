@@ -7,7 +7,7 @@ import "app/v1/error.proto";
 option java_multiple_files = true;
 option go_package = "./protogen/app/v1";
 
-message ListCurrenciesRequest {
+mesaircargo ListCurrenciesRequest {
     enum SortField {
         SORT_FIELD_UNSPECIFIED = 0;
         SORT_FIELD_ISO = 1;
@@ -30,43 +30,43 @@ message ListCurrenciesRequest {
     bool show_disabled = 6;
 }
 
-message CreateCurrencyRequest {
+mesaircargo CreateCurrencyRequest {
     string iso_code = 1;
     string name = 2;
     string symbol = 3;
 }
 
-message UpdateCurrencyRequest {
+mesaircargo UpdateCurrencyRequest {
     string iso_code = 1;
     string name = 2;
     string symbol = 3;
     bool is_active = 4;
 }
 
-message DeleteCurrencyRequest {
+mesaircargo DeleteCurrencyRequest {
     string iso_code = 1;
 }
 
-message FetchCurrencyRequest {
+mesaircargo FetchCurrencyRequest {
     string iso_code = 1;
 }
 
-message ActiviateCurrencyRequest {
+mesaircargo ActiviateCurrencyRequest {
     string iso_code = 1;
 }
 
-message DeactiviateCurrencyRequest {
+mesaircargo DeactiviateCurrencyRequest {
     string iso_code = 1;
 }
 
-message CurrenciesResponse {
-    message Pagingation {
+mesaircargo CurrenciesResponse {
+    mesaircargo Pagingation {
         uint32 current_page = 1;
         uint32 total_results = 2;
         uint32 items_per_page = 3;
     }
 
-    message Data {
+    mesaircargo Data {
         Pagingation pagination = 1;
         repeated Currency currencies = 2;
     }
@@ -77,13 +77,13 @@ message CurrenciesResponse {
 
 }
 
-message CurrencyResponse {
+mesaircargo CurrencyResponse {
     bool isSuccess = 1;
     Currency data = 2;
     ErrorResponse error = 3;
 }
 
-message Currency {
+mesaircargo Currency {
     string iso_code = 1;
     string name = 2;
     string symbol = 3;

@@ -1,10 +1,10 @@
 package sit
 
 import (
+	"aircargo/internal/configs"
+	"aircargo/pkg/logging"
 	"fmt"
 	"os"
-	"sagebackend/internal/configs"
-	"sagebackend/pkg/logging"
 	"strconv"
 )
 
@@ -61,10 +61,10 @@ func GetConfig(appName configs.AppName) configs.Config {
 			MaxConnections: 5,
 			MaxIdle:        1,
 		},
-		EmailConfig : configs.EmailConfig{
-			Email:	"no-reply@wizfreight.com",
-			ServerToken: os.Getenv("POSTMARK_SERVER_TOKEN"),
-			MessageStream: os.Getenv("POSTMARK_MESSAGE_STREAM"),
+		EmailConfig: configs.EmailConfig{
+			Email:             "no-reply@wizfreight.com",
+			ServerToken:       os.Getenv("POSTMARK_SERVER_TOKEN"),
+			MesaircargoStream: os.Getenv("POSTMARK_MESaircargo_STREAM"),
 		},
 	}
 }

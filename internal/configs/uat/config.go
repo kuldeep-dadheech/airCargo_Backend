@@ -1,10 +1,10 @@
 package uat
 
 import (
+	"aircargo/internal/configs"
+	"aircargo/pkg/logging"
 	"fmt"
 	"os"
-	"sagebackend/internal/configs"
-	"sagebackend/pkg/logging"
 	"strconv"
 )
 

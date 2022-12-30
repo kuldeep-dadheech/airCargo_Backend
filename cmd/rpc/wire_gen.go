@@ -7,13 +7,13 @@
 package rpc
 
 import (
-	"sagebackend/internal/configs"
-	"sagebackend/internal/core/services/countriessrv"
-	"sagebackend/internal/core/services/currenciessrv"
-	"sagebackend/internal/handlers/rpc/v1/countries"
-	"sagebackend/internal/handlers/rpc/v1/currencies"
-	"sagebackend/internal/repositories/pgdb/countriesrepo"
-	"sagebackend/internal/repositories/pgdb/currenciesrepo"
+	"aircargo/internal/configs"
+	"aircargo/internal/core/services/countriessrv"
+	"aircargo/internal/core/services/currenciessrv"
+	"aircargo/internal/handlers/rpc/v1/countries"
+	"aircargo/internal/handlers/rpc/v1/currencies"
+	"aircargo/internal/repositories/pgdb/countriesrepo"
+	"aircargo/internal/repositories/pgdb/currenciesrepo"
 )
 
 // Injectors from wire.go:

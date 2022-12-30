@@ -1,17 +1,17 @@
 package main
 
 import (
+	"aircargo/cmd/api"
+	"aircargo/cmd/migrations"
+	"aircargo/cmd/rpc"
+	"aircargo/internal/configs"
+	"aircargo/internal/configs/local"
+	"aircargo/internal/configs/production"
+	"aircargo/internal/configs/sit"
+	"aircargo/internal/configs/uat"
 	"embed"
 	"flag"
 	"os"
-	"sagebackend/cmd/api"
-	"sagebackend/cmd/migrations"
-	"sagebackend/cmd/rpc"
-	"sagebackend/internal/configs"
-	"sagebackend/internal/configs/local"
-	"sagebackend/internal/configs/production"
-	"sagebackend/internal/configs/sit"
-	"sagebackend/internal/configs/uat"
 
 	"github.com/go-redis/redis/v7"
 	// "github.com/gomodule/redigo/redis"
@@ -22,9 +22,9 @@ var embedMigrations embed.FS
 var Client *redis.Client
 
 const (
-	API        configs.AppName = "sage-backend-http-api"
-	RPC        configs.AppName = "sage-backend-rpc-server"
-	MIGRATIONS configs.AppName = "sage-backend-migrations"
+	API        configs.AppName = "aircargo-backend-http-api"
+	RPC        configs.AppName = "aircargo-backend-rpc-server"
+	MIGRATIONS configs.AppName = "aircargo-backend-migrations"
 )
 
 func main() {

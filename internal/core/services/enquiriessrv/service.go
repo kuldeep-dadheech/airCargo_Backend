@@ -1,45 +1,43 @@
 package enquiriessrv
 
 import (
-	"sagebackend/internal/core/domain/repositories/rdbms"
-	"sagebackend/internal/core/domain/services"
-	"sagebackend/internal/core/ports"
+	"aircargo/internal/core/domain/repositories/rdbms"
+	"aircargo/internal/core/domain/services"
+	"aircargo/internal/core/ports"
 )
 
 type Service struct {
 	enquiriesRepository ports.RdbmsEnquiriesRepository
-	cargosRepository ports.RdbmsCargosRepository
+	cargosRepository    ports.RdbmsCargosRepository
 }
 
 func New(
 	enquiriesRepository ports.RdbmsEnquiriesRepository,
 	cargosRepository ports.RdbmsCargosRepository,
-	) *Service {
+) *Service {
 	return &Service{
 		enquiriesRepository: enquiriesRepository,
-		cargosRepository: cargosRepository,
+		cargosRepository:    cargosRepository,
 	}
 }
 
-
-
 func (s *Service) CreateEnquiry(
-	 customer string,
-	 terms_of_shipment string,
-	 origin_customs bool,
-	 door_pickup bool, 
-	 origin_port string,
-	 pickup_address string,
-	 cargo_ready_date  string,
-	 destination_customs  bool,
-	 door_delivery bool,
-	 destination_port  string,
-	 delivery_address  string,
-	 hs_code string,
-	 remarks string,
-	 cargo []services.Cargo,
-	)  (error) {
-	id,err := s.enquiriesRepository.CreateOne(
+	customer string,
+	terms_of_shipment string,
+	origin_customs bool,
+	door_pickup bool,
+	origin_port string,
+	pickup_address string,
+	cargo_ready_date string,
+	destination_customs bool,
+	door_delivery bool,
+	destination_port string,
+	delivery_address string,
+	hs_code string,
+	remarks string,
+	cargo []services.Cargo,
+) error {
+	id, err := s.enquiriesRepository.CreateOne(
 		customer,
 		terms_of_shipment,
 		origin_customs,
@@ -55,7 +53,7 @@ func (s *Service) CreateEnquiry(
 		remarks,
 	)
 	if err != nil {
-	    return err
+		return err
 	}
 	for _, v := range cargo {
 		errf := s.cargosRepository.CreateOne(
@@ -91,7 +89,7 @@ func (s *Service) GetEnquiryById(id int) (services.EnquiryResponse, error) {
 	cargoService := s.mapRepoDomainToServiceCargo(cargos)
 	enquiryResponse := &services.EnquiryResponse{
 		Enquiry: enquiryService,
-		Cargo: cargoService,
+		Cargo:   cargoService,
 	}
 	return *enquiryResponse, nil
 }
@@ -108,7 +106,7 @@ func (s *Service) GetAllEnquiries() ([]services.Enquiry, error) {
 	return enquiriesList, nil
 }
 
-func (s *Service) DeleteEnquiry(id int) (error) {
+func (s *Service) DeleteEnquiry(id int) error {
 	err := s.enquiriesRepository.DeleteOne(id)
 	if err != nil {
 		return err
@@ -125,18 +123,18 @@ func (s *Service) UpdateEnquiry(
 	customer string,
 	terms_of_shipment string,
 	origin_customs bool,
-	door_pickup bool, 
+	door_pickup bool,
 	origin_port string,
 	pickup_address string,
-	cargo_ready_date  string,
-	destination_customs  bool,
+	cargo_ready_date string,
+	destination_customs bool,
 	door_delivery bool,
-	destination_port  string,
-	delivery_address  string,
+	destination_port string,
+	delivery_address string,
 	hs_code string,
 	remarks string,
 	cargo []services.Cargo,
-) (error) {
+) error {
 	err := s.enquiriesRepository.UpdateOne(
 		id,
 		customer,
@@ -182,53 +180,48 @@ func (s *Service) UpdateEnquiry(
 	return nil
 }
 
-
-
 func (s *Service) mapRepoDomainToService(
-    enquiry rdbms.Enquiry,
-) services.Enquiry{
+	enquiry rdbms.Enquiry,
+) services.Enquiry {
 	return services.Enquiry{
-		Id : enquiry.Id,
-		Customer : enquiry.Customer,
-		Terms_of_shipment : enquiry.Terms_of_shipment,
-		Origin_customs : enquiry.Origin_customs,
-		Door_pickup : enquiry.Door_pickup,
-		Origin_port : enquiry.Origin_port,
-		Pickup_address : enquiry.Pickup_address,
-		Cargo_ready_date : enquiry.Cargo_ready_date,
-		Destination_customs : enquiry.Destination_customs,
-		Door_delivery : enquiry.Door_delivery,
-		Destination_port : enquiry.Destination_port,
-		Delivery_address : enquiry.Delivery_address,
-		Hs_code : enquiry.Hs_code,
-		Remarks : enquiry.Remarks,
-		Created_at : enquiry.Created_at,
-		Modified_at : enquiry.Modified_at,
-
-}
+		Id:                  enquiry.Id,
+		Customer:            enquiry.Customer,
+		Terms_of_shipment:   enquiry.Terms_of_shipment,
+		Origin_customs:      enquiry.Origin_customs,
+		Door_pickup:         enquiry.Door_pickup,
+		Origin_port:         enquiry.Origin_port,
+		Pickup_address:      enquiry.Pickup_address,
+		Cargo_ready_date:    enquiry.Cargo_ready_date,
+		Destination_customs: enquiry.Destination_customs,
+		Door_delivery:       enquiry.Door_delivery,
+		Destination_port:    enquiry.Destination_port,
+		Delivery_address:    enquiry.Delivery_address,
+		Hs_code:             enquiry.Hs_code,
+		Remarks:             enquiry.Remarks,
+		Created_at:          enquiry.Created_at,
+		Modified_at:         enquiry.Modified_at,
+	}
 }
 
 func (s *Service) mapRepoDomainToServiceCargo(
 	cargos []rdbms.Cargo,
-) []services.Cargo{
+) []services.Cargo {
 	var cargoList []services.Cargo
 	for _, v := range cargos {
-	cargo := services.Cargo{
-		Id : v.Id,
-		Enquiry_id : v.Enquiry_id,
-		Count : v.Count,
-		Length : v.Length,
-		Width : v.Width,
-		Height : v.Height,
-		Volume : v.Volume,
-		Weight : v.Weight,
-		Unit : v.Unit,
-		Total_volume : v.Total_volume,
-		Total_weight : v.Total_weight,
+		cargo := services.Cargo{
+			Id:           v.Id,
+			Enquiry_id:   v.Enquiry_id,
+			Count:        v.Count,
+			Length:       v.Length,
+			Width:        v.Width,
+			Height:       v.Height,
+			Volume:       v.Volume,
+			Weight:       v.Weight,
+			Unit:         v.Unit,
+			Total_volume: v.Total_volume,
+			Total_weight: v.Total_weight,
+		}
+		cargoList = append(cargoList, cargo)
 	}
-	cargoList = append(cargoList, cargo)
-}
 	return cargoList
 }
-
-

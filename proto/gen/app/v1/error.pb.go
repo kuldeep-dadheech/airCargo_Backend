@@ -21,12 +21,12 @@ const (
 )
 
 type ErrorResponse struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	Code        string        `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`
-	Message     string        `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	Mesaircargo     string        `protobuf:"bytes,2,opt,name=mesaircargo,proto3" json:"mesaircargo,omitempty"`
 	InputErrors []*InputError `protobuf:"bytes,3,rep,name=input_errors,json=inputErrors,proto3" json:"input_errors,omitempty"`
 }
 
@@ -34,27 +34,27 @@ func (x *ErrorResponse) Reset() {
 	*x = ErrorResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_error_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *ErrorResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*ErrorResponse) ProtoMessage() {}
+func (*ErrorResponse) ProtoMesaircargo() {}
 
-func (x *ErrorResponse) ProtoReflect() protoreflect.Message {
+func (x *ErrorResponse) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_error_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use ErrorResponse.ProtoReflect.Descriptor instead.
@@ -69,9 +69,9 @@ func (x *ErrorResponse) GetCode() string {
 	return ""
 }
 
-func (x *ErrorResponse) GetMessage() string {
+func (x *ErrorResponse) GetMesaircargo() string {
 	if x != nil {
-		return x.Message
+		return x.Mesaircargo
 	}
 	return ""
 }
@@ -84,7 +84,7 @@ func (x *ErrorResponse) GetInputErrors() []*InputError {
 }
 
 type InputError struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
@@ -96,27 +96,27 @@ func (x *InputError) Reset() {
 	*x = InputError{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_error_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *InputError) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*InputError) ProtoMessage() {}
+func (*InputError) ProtoMesaircargo() {}
 
-func (x *InputError) ProtoReflect() protoreflect.Message {
+func (x *InputError) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_error_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use InputError.ProtoReflect.Descriptor instead.
@@ -170,7 +170,7 @@ func file_app_v1_error_proto_rawDescGZIP() []byte {
 	return file_app_v1_error_proto_rawDescData
 }
 
-var file_app_v1_error_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_app_v1_error_proto_msgTypes = make([]protoimpl.MesaircargoInfo, 2)
 var file_app_v1_error_proto_goTypes = []interface{}{
 	(*ErrorResponse)(nil), // 0: app.v1.ErrorResponse
 	(*InputError)(nil),    // 1: app.v1.InputError
@@ -221,13 +221,13 @@ func file_app_v1_error_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_app_v1_error_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMesaircargos:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_app_v1_error_proto_goTypes,
 		DependencyIndexes: file_app_v1_error_proto_depIdxs,
-		MessageInfos:      file_app_v1_error_proto_msgTypes,
+		MesaircargoInfos:      file_app_v1_error_proto_msgTypes,
 	}.Build()
 	File_app_v1_error_proto = out.File
 	file_app_v1_error_proto_rawDesc = nil

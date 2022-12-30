@@ -1,12 +1,13 @@
 package v1
 
 import (
-	"sagebackend/internal/handlers/api/v1/countries"
-	"sagebackend/internal/handlers/api/v1/currencies"
-	"sagebackend/internal/handlers/api/v1/users"
-	"sagebackend/internal/handlers/api/v1/enquiries"
+	"aircargo/internal/handlers/api/v1/countries"
+	"aircargo/internal/handlers/api/v1/currencies"
+	"aircargo/internal/handlers/api/v1/enquiries"
+	"aircargo/internal/handlers/api/v1/users"
 
-    "sagebackend/internal/handlers/api/v1/bq"
+	"aircargo/internal/handlers/api/v1/bq"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,12 +16,12 @@ type GroupRoutes interface {
 }
 
 type Routes struct {
-	countryRoutes  countries.GroupRoutes
-	currencyRoutes currencies.GroupRoutes
-	usersRoutes    users.GroupRoutes
+	countryRoutes   countries.GroupRoutes
+	currencyRoutes  currencies.GroupRoutes
+	usersRoutes     users.GroupRoutes
 	enquiriesRoutes enquiries.GroupRoutes
 
-    bqRoutes bq.GroupRoutes
+	bqRoutes bq.GroupRoutes
 }
 
 func New(
@@ -29,21 +30,21 @@ func New(
 	usersRoutes users.GroupRoutes,
 	enquiriesRoutes enquiries.GroupRoutes,
 
-    bqRoutes bq.GroupRoutes,
+	bqRoutes bq.GroupRoutes,
 ) *Routes {
 	return &Routes{
-		countryRoutes:  countryRoutes,
-		currencyRoutes: currencyRoutes,
-		usersRoutes:    usersRoutes,
+		countryRoutes:   countryRoutes,
+		currencyRoutes:  currencyRoutes,
+		usersRoutes:     usersRoutes,
 		enquiriesRoutes: enquiriesRoutes,
 
-        bqRoutes: bqRoutes,
+		bqRoutes: bqRoutes,
 	}
 }
 
 func (ro *Routes) Initialize(prefix string, r gin.IRouter) {
 
-	r.GET("/data/ping", func(c *gin.Context) { c.JSON(200, gin.H{"message": "pong"}) })
+	r.GET("/data/ping", func(c *gin.Context) { c.JSON(200, gin.H{"mesaircargo": "pong"}) })
 
 	v1 := r.Group(prefix)
 	{
@@ -52,6 +53,6 @@ func (ro *Routes) Initialize(prefix string, r gin.IRouter) {
 		ro.usersRoutes.Initialize("/users", v1)
 		ro.enquiriesRoutes.Initialize("/enquiries", v1)
 
-        ro.bqRoutes.Initialize("/bq", v1)
+		ro.bqRoutes.Initialize("/bq", v1)
 	}
 }

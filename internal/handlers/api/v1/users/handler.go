@@ -1,8 +1,8 @@
 package users
 
 import (
-	"sagebackend/internal/core/ports"
-	"sagebackend/pkg/logging"
+	"aircargo/internal/core/ports"
+	"aircargo/pkg/logging"
 
 	"github.com/gin-gonic/gin"
 )
@@ -12,18 +12,12 @@ type RoutesHandler interface {
 	Get(ctx *gin.Context)
 	Hey(ctx *gin.Context)
 
-
-
-
-
 	Signin(ctx *gin.Context)
-
 }
 
 type Handler struct {
-	logger           logging.Logger
+	logger       logging.Logger
 	usersService ports.UsersService
-	
 }
 
 func NewHandler(
@@ -32,7 +26,7 @@ func NewHandler(
 
 ) *Handler {
 	return &Handler{
-		logger:           logger,
+		logger:       logger,
 		usersService: usersService,
 	}
 }

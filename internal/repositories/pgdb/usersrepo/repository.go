@@ -1,9 +1,9 @@
 package usersrepo
 
 import (
+	"aircargo/internal/core/domain/repositories/rdbms"
+	"aircargo/pkg/logging"
 	"fmt"
-	"sagebackend/internal/core/domain/repositories/rdbms"
-	"sagebackend/pkg/logging"
 
 	"github.com/doug-martin/goqu/v9"
 )
@@ -60,7 +60,7 @@ func (r *Repository) InsertOne(
 		},
 	).Returning("id")
 	if _, err := insert.Executor().ScanStruct(&userId); err != nil {
-		return  err
+		return err
 	} else {
 		fmt.Println("Inserted 1 user")
 	}

@@ -6,7 +6,7 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	pb "sagebackend/proto/gen/app/v1"
+	pb "aircargo/proto/gen/app/v1"
 )
 
 func (h *Handler) Activate(ctx context.Context, req *pb.ActiviateCurrencyRequest) (*pb.CurrencyResponse, error) {

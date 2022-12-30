@@ -19,5 +19,5 @@ func (h *Handler) Delete(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, err)
 		return
 	}
-	ctx.JSON(http.StatusOK, gin.H{"message": "BQ deleted successfully"})
+	ctx.JSON(http.StatusOK, gin.H{"mesaircargo": "BQ deleted successfully"})
 }

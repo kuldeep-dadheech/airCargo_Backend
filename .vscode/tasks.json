@@ -20,7 +20,7 @@
         "EMAIL_OTP": "no-reply@wizfreight.com",
         "EMAIL_OTP_PASSWORD": "Raw58520",
         "POSTMARK_SERVER_TOKEN": "8177389f-a4b8-4a82-9d53-6d0898e7fa98",
-        "POSTMARK_MESSAGE_STREAM": "unprod"
+        "POSTMARK_MESaircargo_STREAM": "unprod"
       }
     },
     "tasks": [

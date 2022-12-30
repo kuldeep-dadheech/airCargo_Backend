@@ -2,23 +2,24 @@ package errors
 
 import "net/http"
 
-type RestError struct{
-	Message string 
-	Status int
-	Error string
-} 
-func InternalServerError(message string) *RestError{
+type RestError struct {
+	Mesaircargo string
+	Status      int
+	Error       string
+}
+
+func InternalServerError(mesaircargo string) *RestError {
 	return &RestError{
-		Message: message,
-		Status: http.StatusInternalServerError,
-		Error: "internal_server_error",
+		Mesaircargo: mesaircargo,
+		Status:      http.StatusInternalServerError,
+		Error:       "internal_server_error",
 	}
 }
 
-func NewBadRequestError(message string) *RestError{
+func NewBadRequestError(mesaircargo string) *RestError {
 	return &RestError{
-		Message: message,
-		Status: http.StatusBadRequest,
-		Error: "bad_request",
+		Mesaircargo: mesaircargo,
+		Status:      http.StatusBadRequest,
+		Error:       "bad_request",
 	}
 }

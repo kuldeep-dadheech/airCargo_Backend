@@ -1,11 +1,11 @@
 package migrations
 
 import (
+	"aircargo/internal/configs"
+	"aircargo/pkg/logging"
 	"database/sql"
 	"embed"
 	"fmt"
-	"sagebackend/internal/configs"
-	"sagebackend/pkg/logging"
 
 	_ "github.com/jackc/pgx/v4/stdlib"
 	"github.com/pressly/goose/v3"

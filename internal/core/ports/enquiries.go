@@ -1,27 +1,26 @@
 package ports
 
 import (
-	"sagebackend/internal/core/domain/repositories/rdbms"
-	"sagebackend/internal/core/domain/services"
-
+	"aircargo/internal/core/domain/repositories/rdbms"
+	"aircargo/internal/core/domain/services"
 )
 
-type  RdbmsEnquiriesRepository interface {
+type RdbmsEnquiriesRepository interface {
 	CreateOne(
 		customer string,
 		terms_of_shipment string,
 		origin_customs bool,
-		door_pickup bool, 
+		door_pickup bool,
 		origin_port string,
 		pickup_address string,
-		cargo_ready_date  string,
-		destination_customs  bool,
+		cargo_ready_date string,
+		destination_customs bool,
 		door_delivery bool,
-		destination_port  string,
-		delivery_address  string,
+		destination_port string,
+		delivery_address string,
 		hs_code string,
 		remarks string,
-	) (int,error)
+	) (int, error)
 
 	SelectOne(id int) (rdbms.Enquiry, error)
 
@@ -63,7 +62,7 @@ type EnquiriesService interface {
 		hs_code string,
 		remarks string,
 		cargo []services.Cargo,
-	) (error)
+	) error
 
 	GetEnquiryById(id int) (services.EnquiryResponse, error)
 
@@ -85,9 +84,7 @@ type EnquiriesService interface {
 		hs_code string,
 		remarks string,
 		cargo []services.Cargo,
-	) (error)
+	) error
 
-	DeleteEnquiry(id int) (error)
-
+	DeleteEnquiry(id int) error
 }
-

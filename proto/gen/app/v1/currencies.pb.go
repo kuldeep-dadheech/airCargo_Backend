@@ -125,7 +125,7 @@ func (ListCurrenciesRequest_SortOrder) EnumDescriptor() ([]byte, []int) {
 }
 
 type ListCurrenciesRequest struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
@@ -141,27 +141,27 @@ func (x *ListCurrenciesRequest) Reset() {
 	*x = ListCurrenciesRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_currencies_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *ListCurrenciesRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*ListCurrenciesRequest) ProtoMessage() {}
+func (*ListCurrenciesRequest) ProtoMesaircargo() {}
 
-func (x *ListCurrenciesRequest) ProtoReflect() protoreflect.Message {
+func (x *ListCurrenciesRequest) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_currencies_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use ListCurrenciesRequest.ProtoReflect.Descriptor instead.
@@ -212,7 +212,7 @@ func (x *ListCurrenciesRequest) GetShowDisabled() bool {
 }
 
 type CreateCurrencyRequest struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
@@ -225,27 +225,27 @@ func (x *CreateCurrencyRequest) Reset() {
 	*x = CreateCurrencyRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_currencies_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *CreateCurrencyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*CreateCurrencyRequest) ProtoMessage() {}
+func (*CreateCurrencyRequest) ProtoMesaircargo() {}
 
-func (x *CreateCurrencyRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateCurrencyRequest) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_currencies_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use CreateCurrencyRequest.ProtoReflect.Descriptor instead.
@@ -275,7 +275,7 @@ func (x *CreateCurrencyRequest) GetSymbol() string {
 }
 
 type UpdateCurrencyRequest struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
@@ -289,27 +289,27 @@ func (x *UpdateCurrencyRequest) Reset() {
 	*x = UpdateCurrencyRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_currencies_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *UpdateCurrencyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*UpdateCurrencyRequest) ProtoMessage() {}
+func (*UpdateCurrencyRequest) ProtoMesaircargo() {}
 
-func (x *UpdateCurrencyRequest) ProtoReflect() protoreflect.Message {
+func (x *UpdateCurrencyRequest) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_currencies_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use UpdateCurrencyRequest.ProtoReflect.Descriptor instead.
@@ -346,7 +346,7 @@ func (x *UpdateCurrencyRequest) GetIsActive() bool {
 }
 
 type DeleteCurrencyRequest struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
@@ -357,27 +357,27 @@ func (x *DeleteCurrencyRequest) Reset() {
 	*x = DeleteCurrencyRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_currencies_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *DeleteCurrencyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*DeleteCurrencyRequest) ProtoMessage() {}
+func (*DeleteCurrencyRequest) ProtoMesaircargo() {}
 
-func (x *DeleteCurrencyRequest) ProtoReflect() protoreflect.Message {
+func (x *DeleteCurrencyRequest) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_currencies_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use DeleteCurrencyRequest.ProtoReflect.Descriptor instead.
@@ -393,7 +393,7 @@ func (x *DeleteCurrencyRequest) GetIsoCode() string {
 }
 
 type FetchCurrencyRequest struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
@@ -404,27 +404,27 @@ func (x *FetchCurrencyRequest) Reset() {
 	*x = FetchCurrencyRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_currencies_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *FetchCurrencyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*FetchCurrencyRequest) ProtoMessage() {}
+func (*FetchCurrencyRequest) ProtoMesaircargo() {}
 
-func (x *FetchCurrencyRequest) ProtoReflect() protoreflect.Message {
+func (x *FetchCurrencyRequest) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_currencies_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use FetchCurrencyRequest.ProtoReflect.Descriptor instead.
@@ -440,7 +440,7 @@ func (x *FetchCurrencyRequest) GetIsoCode() string {
 }
 
 type ActiviateCurrencyRequest struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
@@ -451,27 +451,27 @@ func (x *ActiviateCurrencyRequest) Reset() {
 	*x = ActiviateCurrencyRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_currencies_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *ActiviateCurrencyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*ActiviateCurrencyRequest) ProtoMessage() {}
+func (*ActiviateCurrencyRequest) ProtoMesaircargo() {}
 
-func (x *ActiviateCurrencyRequest) ProtoReflect() protoreflect.Message {
+func (x *ActiviateCurrencyRequest) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_currencies_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use ActiviateCurrencyRequest.ProtoReflect.Descriptor instead.
@@ -487,7 +487,7 @@ func (x *ActiviateCurrencyRequest) GetIsoCode() string {
 }
 
 type DeactiviateCurrencyRequest struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
@@ -498,27 +498,27 @@ func (x *DeactiviateCurrencyRequest) Reset() {
 	*x = DeactiviateCurrencyRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_currencies_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *DeactiviateCurrencyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*DeactiviateCurrencyRequest) ProtoMessage() {}
+func (*DeactiviateCurrencyRequest) ProtoMesaircargo() {}
 
-func (x *DeactiviateCurrencyRequest) ProtoReflect() protoreflect.Message {
+func (x *DeactiviateCurrencyRequest) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_currencies_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use DeactiviateCurrencyRequest.ProtoReflect.Descriptor instead.
@@ -534,7 +534,7 @@ func (x *DeactiviateCurrencyRequest) GetIsoCode() string {
 }
 
 type CurrenciesResponse struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
@@ -547,27 +547,27 @@ func (x *CurrenciesResponse) Reset() {
 	*x = CurrenciesResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_currencies_proto_msgTypes[7]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *CurrenciesResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*CurrenciesResponse) ProtoMessage() {}
+func (*CurrenciesResponse) ProtoMesaircargo() {}
 
-func (x *CurrenciesResponse) ProtoReflect() protoreflect.Message {
+func (x *CurrenciesResponse) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_currencies_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use CurrenciesResponse.ProtoReflect.Descriptor instead.
@@ -597,7 +597,7 @@ func (x *CurrenciesResponse) GetError() *ErrorResponse {
 }
 
 type CurrencyResponse struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
@@ -610,27 +610,27 @@ func (x *CurrencyResponse) Reset() {
 	*x = CurrencyResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_currencies_proto_msgTypes[8]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *CurrencyResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*CurrencyResponse) ProtoMessage() {}
+func (*CurrencyResponse) ProtoMesaircargo() {}
 
-func (x *CurrencyResponse) ProtoReflect() protoreflect.Message {
+func (x *CurrencyResponse) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_currencies_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use CurrencyResponse.ProtoReflect.Descriptor instead.
@@ -660,7 +660,7 @@ func (x *CurrencyResponse) GetError() *ErrorResponse {
 }
 
 type Currency struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
@@ -676,27 +676,27 @@ func (x *Currency) Reset() {
 	*x = Currency{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_currencies_proto_msgTypes[9]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *Currency) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*Currency) ProtoMessage() {}
+func (*Currency) ProtoMesaircargo() {}
 
-func (x *Currency) ProtoReflect() protoreflect.Message {
+func (x *Currency) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_currencies_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use Currency.ProtoReflect.Descriptor instead.
@@ -747,7 +747,7 @@ func (x *Currency) GetMofifiedAt() string {
 }
 
 type CurrenciesResponse_Pagingation struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
@@ -760,27 +760,27 @@ func (x *CurrenciesResponse_Pagingation) Reset() {
 	*x = CurrenciesResponse_Pagingation{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_currencies_proto_msgTypes[10]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *CurrenciesResponse_Pagingation) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*CurrenciesResponse_Pagingation) ProtoMessage() {}
+func (*CurrenciesResponse_Pagingation) ProtoMesaircargo() {}
 
-func (x *CurrenciesResponse_Pagingation) ProtoReflect() protoreflect.Message {
+func (x *CurrenciesResponse_Pagingation) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_currencies_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use CurrenciesResponse_Pagingation.ProtoReflect.Descriptor instead.
@@ -810,7 +810,7 @@ func (x *CurrenciesResponse_Pagingation) GetItemsPerPage() uint32 {
 }
 
 type CurrenciesResponse_Data struct {
-	state         protoimpl.MessageState
+	state         protoimpl.MesaircargoState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
@@ -822,27 +822,27 @@ func (x *CurrenciesResponse_Data) Reset() {
 	*x = CurrenciesResponse_Data{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_app_v1_currencies_proto_msgTypes[11]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		ms.StoreMesaircargoInfo(mi)
 	}
 }
 
 func (x *CurrenciesResponse_Data) String() string {
-	return protoimpl.X.MessageStringOf(x)
+	return protoimpl.X.MesaircargoStringOf(x)
 }
 
-func (*CurrenciesResponse_Data) ProtoMessage() {}
+func (*CurrenciesResponse_Data) ProtoMesaircargo() {}
 
-func (x *CurrenciesResponse_Data) ProtoReflect() protoreflect.Message {
+func (x *CurrenciesResponse_Data) ProtoReflect() protoreflect.Mesaircargo {
 	mi := &file_app_v1_currencies_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
+		ms := protoimpl.X.MesaircargoStateOf(protoimpl.Pointer(x))
+		if ms.LoadMesaircargoInfo() == nil {
+			ms.StoreMesaircargoInfo(mi)
 		}
 		return ms
 	}
-	return mi.MessageOf(x)
+	return mi.MesaircargoOf(x)
 }
 
 // Deprecated: Use CurrenciesResponse_Data.ProtoReflect.Descriptor instead.
@@ -996,7 +996,7 @@ func file_app_v1_currencies_proto_rawDescGZIP() []byte {
 }
 
 var file_app_v1_currencies_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_app_v1_currencies_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_app_v1_currencies_proto_msgTypes = make([]protoimpl.MesaircargoInfo, 12)
 var file_app_v1_currencies_proto_goTypes = []interface{}{
 	(ListCurrenciesRequest_SortField)(0),   // 0: app.v1.ListCurrenciesRequest.SortField
 	(ListCurrenciesRequest_SortOrder)(0),   // 1: app.v1.ListCurrenciesRequest.SortOrder
@@ -1189,14 +1189,14 @@ func file_app_v1_currencies_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_app_v1_currencies_proto_rawDesc,
 			NumEnums:      2,
-			NumMessages:   12,
+			NumMesaircargos:   12,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_app_v1_currencies_proto_goTypes,
 		DependencyIndexes: file_app_v1_currencies_proto_depIdxs,
 		EnumInfos:         file_app_v1_currencies_proto_enumTypes,
-		MessageInfos:      file_app_v1_currencies_proto_msgTypes,
+		MesaircargoInfos:      file_app_v1_currencies_proto_msgTypes,
 	}.Build()
 	File_app_v1_currencies_proto = out.File
 	file_app_v1_currencies_proto_rawDesc = nil

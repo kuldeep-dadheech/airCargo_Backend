@@ -7,7 +7,7 @@ option go_package = "./protogen/app/v1";
 
 option java_multiple_files = true;
 
-message ListCountriesRequest {
+mesaircargo ListCountriesRequest {
     enum SortField {
         SORT_FIELD_UNSPECIFIED = 0;
         SORT_FIELD_ISO = 1;
@@ -31,14 +31,14 @@ message ListCountriesRequest {
     bool show_disabled = 6;
 }
 
-message CreateCountryRequest {
+mesaircargo CreateCountryRequest {
     string iso_code = 1;
     string name = 2;
     optional string iso_3 = 3;
     uint32 calling_code = 4;
 }
 
-message UpdateCountryRequest {
+mesaircargo UpdateCountryRequest {
     string iso_code = 1;
     optional string name = 2;
     optional string iso_3 = 3;
@@ -46,30 +46,30 @@ message UpdateCountryRequest {
     bool is_active = 5;
 }
 
-message DeleteCountryRequest {
+mesaircargo DeleteCountryRequest {
     string iso_code = 1;
 }
 
-message FetchCountryRequest {
+mesaircargo FetchCountryRequest {
     string iso_code = 1;
 }
 
-message ActiviateCountryRequest {
+mesaircargo ActiviateCountryRequest {
     string iso_code = 1;
 }
 
-message DeactiviateCountryRequest {
+mesaircargo DeactiviateCountryRequest {
     string iso_code = 1;
 }
 
-message CountriesResponse {
-    message Pagingation {
+mesaircargo CountriesResponse {
+    mesaircargo Pagingation {
         uint32 current_page = 1;
         uint32 total_results = 2;
         uint32 items_per_page = 3;
     }
 
-    message Data {
+    mesaircargo Data {
         Pagingation pagination = 1;
         repeated Country countries = 2;
     }
@@ -80,13 +80,13 @@ message CountriesResponse {
 
 }
 
-message CountryResponse {
+mesaircargo CountryResponse {
     bool isSuccess = 1;
     Country data = 2;
     ErrorResponse error = 3;
 }
 
-message Country {
+mesaircargo Country {
     string iso_code = 1;
     string name = 2;
     optional string iso_3 = 3;

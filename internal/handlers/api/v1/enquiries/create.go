@@ -6,7 +6,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-
 func (h *Handler) Create(ctx *gin.Context) {
 	var enquiryData enquiry
 	if err := ctx.ShouldBindJSON(&enquiryData); err != nil {
@@ -34,5 +33,5 @@ func (h *Handler) Create(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
-	ctx.JSON(http.StatusOK, gin.H{"message": "Enquiry created successfully"})
+	ctx.JSON(http.StatusOK, gin.H{"mesaircargo": "Enquiry created successfully"})
 }

@@ -31,5 +31,5 @@ func (h *Handler) Create(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
-	ctx.JSON(http.StatusOK, gin.H{"message": "BQ created successfully"})
+	ctx.JSON(http.StatusOK, gin.H{"mesaircargo": "BQ created successfully"})
 }

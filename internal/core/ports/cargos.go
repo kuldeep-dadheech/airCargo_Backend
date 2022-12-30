@@ -1,7 +1,6 @@
 package ports
 
-import "sagebackend/internal/core/domain/repositories/rdbms"
-
+import "aircargo/internal/core/domain/repositories/rdbms"
 
 type RdbmsCargosRepository interface {
 	CreateOne(
@@ -16,6 +15,6 @@ type RdbmsCargosRepository interface {
 		total_volume string,
 		total_weight string,
 	) error
-	SelectAll(enquiry_id int) ([]rdbms.Cargo, error)	
+	SelectAll(enquiry_id int) ([]rdbms.Cargo, error)
 	DeleteAll(enquiry_id int) error
 }

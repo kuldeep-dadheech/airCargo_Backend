@@ -1,9 +1,9 @@
 package enquiriesrepo
 
 import (
+	"aircargo/internal/core/domain/repositories/rdbms"
+	"aircargo/pkg/logging"
 	"fmt"
-	"sagebackend/internal/core/domain/repositories/rdbms"
-	"sagebackend/pkg/logging"
 
 	"github.com/doug-martin/goqu/v9"
 )

@@ -1,10 +1,10 @@
 package local
 
 import (
+	"aircargo/internal/configs"
+	"aircargo/pkg/logging"
 	"fmt"
 	"os"
-	"sagebackend/internal/configs"
-	"sagebackend/pkg/logging"
 	"strconv"
 )
 
@@ -77,9 +77,9 @@ func GetConfig(appName configs.AppName) configs.Config {
 			SSLMode:        configs.SSL_MODE_DISABLED,
 		},
 		EmailConfig: configs.EmailConfig{
-				Email:	"no-reply@wizfreight.com",
-				ServerToken: os.Getenv("POSTMARK_SERVER_TOKEN"),
-				MessageStream: os.Getenv("POSTMARK_MESSAGE_STREAM"),
+			Email:             "no-reply@wizfreight.com",
+			ServerToken:       os.Getenv("POSTMARK_SERVER_TOKEN"),
+			MesaircargoStream: os.Getenv("POSTMARK_MESaircargo_STREAM"),
 		},
 	}
 }

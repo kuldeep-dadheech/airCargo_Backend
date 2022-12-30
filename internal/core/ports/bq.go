@@ -1,8 +1,8 @@
 package ports
 
 import (
-	"sagebackend/internal/core/domain/repositories/rdbms"
-	"sagebackend/internal/core/domain/services"
+	"aircargo/internal/core/domain/repositories/rdbms"
+	"aircargo/internal/core/domain/services"
 )
 
 type RdbmsBqRepository interface {

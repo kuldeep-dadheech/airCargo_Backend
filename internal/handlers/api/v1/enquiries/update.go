@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func (h *Handler) Update(ctx *gin.Context){
+func (h *Handler) Update(ctx *gin.Context) {
 	var enquiryData enquiry
 
 	if err := ctx.ShouldBindJSON(&enquiryData); err != nil {
@@ -15,7 +15,7 @@ func (h *Handler) Update(ctx *gin.Context){
 		return
 	}
 
-	enquiry ,err := h.enquiriesService.GetEnquiryById(enquiryData.Id)
+	enquiry, err := h.enquiriesService.GetEnquiryById(enquiryData.Id)
 
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, err)
@@ -31,5 +31,5 @@ func (h *Handler) Update(ctx *gin.Context){
 		return
 	}
 
-	ctx.JSON(http.StatusOK, gin.H{"message": "Enquiry updated successfully"})
+	ctx.JSON(http.StatusOK, gin.H{"mesaircargo": "Enquiry updated successfully"})
 }

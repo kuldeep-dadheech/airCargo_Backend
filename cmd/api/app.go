@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"sagebackend/internal/configs"
-	v1 "sagebackend/internal/handlers/api/v1"
-	"sagebackend/pkg/logging"
+	"aircargo/internal/configs"
+	v1 "aircargo/internal/handlers/api/v1"
+	"aircargo/pkg/logging"
 
 	_ "github.com/jackc/pgx/v4/stdlib"
 
@@ -97,7 +97,7 @@ func NewHttpEngine(
 	}))
 	r.Use(cors.Default())
 
-	r.GET("/ping", func(c *gin.Context) { c.JSON(200, gin.H{"message": "pong"}) })
+	r.GET("/ping", func(c *gin.Context) { c.JSON(200, gin.H{"mesaircargo": "pong"}) })
 
 	v1Routes.Initialize(fmt.Sprintf("%s/v1", baseRouterPrefix), r)
 

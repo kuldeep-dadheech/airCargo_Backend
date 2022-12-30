@@ -1,7 +1,7 @@
 package configs
 
 import (
-	"sagebackend/pkg/logging"
+	"aircargo/pkg/logging"
 )
 
 type AppPort uint64
@@ -17,7 +17,7 @@ type Config struct {
 	PgDbConfig       PgDbConfig
 	RedisConfig      RedisConfig
 	LogConfig        LogConfig
-	EmailConfig 	 EmailConfig
+	EmailConfig      EmailConfig
 }
 
 type PgSSLMode string
@@ -66,7 +66,7 @@ const (
 )
 
 type EmailConfig struct {
-	Email string
-	ServerToken string
-	MessageStream string
+	Email             string
+	ServerToken       string
+	MesaircargoStream string
 }

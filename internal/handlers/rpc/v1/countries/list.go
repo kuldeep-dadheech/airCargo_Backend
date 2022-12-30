@@ -1,10 +1,10 @@
 package countries
 
 import (
+	"aircargo/internal/core/ports"
 	"context"
-	"sagebackend/internal/core/ports"
 
-	pb "sagebackend/proto/gen/app/v1"
+	pb "aircargo/proto/gen/app/v1"
 )
 
 func (h *Handler) List(ctx context.Context, req *pb.ListCountriesRequest) (*pb.CountriesResponse, error) {
@@ -64,8 +64,8 @@ func (h *Handler) List(ctx context.Context, req *pb.ListCountriesRequest) (*pb.C
 		return &pb.CountriesResponse{
 			IsSuccess: false,
 			Error: &pb.ErrorResponse{
-				Code:    "SYSTEM_ERROR",
-				Message: "There was an error when fetching countries",
+				Code:        "SYSTEM_ERROR",
+				Mesaircargo: "There was an error when fetching countries",
 			},
 		}, nil
 	}

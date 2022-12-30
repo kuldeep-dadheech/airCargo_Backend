@@ -6,29 +6,27 @@
 package api
 
 import (
-	"sagebackend/internal/configs"
-	"sagebackend/internal/core/ports"
+	"aircargo/internal/configs"
+	"aircargo/internal/core/ports"
 
-	"sagebackend/internal/core/services/countriessrv"
-	"sagebackend/internal/core/services/currenciessrv"
-	"sagebackend/internal/core/services/userssrv"
-	"sagebackend/internal/core/services/bqsrv"
-	"sagebackend/internal/core/services/enquiriessrv"
-	v1 "sagebackend/internal/handlers/api/v1"
-	"sagebackend/internal/handlers/api/v1/countries"
-	"sagebackend/internal/handlers/api/v1/currencies"
-	"sagebackend/internal/handlers/api/v1/bq"
-	"sagebackend/internal/handlers/api/v1/enquiries"
-	"sagebackend/internal/handlers/api/v1/users"
-	"sagebackend/internal/repositories/pgdb/countriesrepo"
-	"sagebackend/internal/repositories/pgdb/currenciesrepo"
-	"sagebackend/internal/repositories/pgdb/usersrepo"
-	"sagebackend/internal/repositories/pgdb/bqrepo"
-	"sagebackend/internal/repositories/pgdb/enquiriesrepo"
-	"sagebackend/internal/repositories/pgdb/chargesrepo"
-	"sagebackend/internal/repositories/pgdb/cargosrepo"
-
-	
+	"aircargo/internal/core/services/bqsrv"
+	"aircargo/internal/core/services/countriessrv"
+	"aircargo/internal/core/services/currenciessrv"
+	"aircargo/internal/core/services/enquiriessrv"
+	"aircargo/internal/core/services/userssrv"
+	v1 "aircargo/internal/handlers/api/v1"
+	"aircargo/internal/handlers/api/v1/bq"
+	"aircargo/internal/handlers/api/v1/countries"
+	"aircargo/internal/handlers/api/v1/currencies"
+	"aircargo/internal/handlers/api/v1/enquiries"
+	"aircargo/internal/handlers/api/v1/users"
+	"aircargo/internal/repositories/pgdb/bqrepo"
+	"aircargo/internal/repositories/pgdb/cargosrepo"
+	"aircargo/internal/repositories/pgdb/chargesrepo"
+	"aircargo/internal/repositories/pgdb/countriesrepo"
+	"aircargo/internal/repositories/pgdb/currenciesrepo"
+	"aircargo/internal/repositories/pgdb/enquiriesrepo"
+	"aircargo/internal/repositories/pgdb/usersrepo"
 
 	"github.com/google/wire"
 )
@@ -50,12 +48,11 @@ func InitializeApp(
 		usersrepo.New,
 		enquiriesrepo.New,
 
-        cargosrepo.New,
+		cargosrepo.New,
 
-        bqrepo.New,
+		bqrepo.New,
 
-        chargesrepo.New,
-
+		chargesrepo.New,
 
 		//Repo Bindings
 		wire.Bind(new(ports.RdbmsCountriesRepository), new(*countriesrepo.Repository)),
@@ -63,11 +60,11 @@ func InitializeApp(
 		wire.Bind(new(ports.RdbmsUsersRepository), new(*usersrepo.Repository)),
 		wire.Bind(new(ports.RdbmsEnquiriesRepository), new(*enquiriesrepo.Repository)),
 
-        wire.Bind(new(ports.RdbmsCargosRepository), new(*cargosrepo.Repository)),
+		wire.Bind(new(ports.RdbmsCargosRepository), new(*cargosrepo.Repository)),
 
-        wire.Bind(new(ports.RdbmsBqRepository), new(*bqrepo.Repository)),
+		wire.Bind(new(ports.RdbmsBqRepository), new(*bqrepo.Repository)),
 
-        wire.Bind(new(ports.RdbmsChargesRepository), new(*chargesrepo.Repository)),
+		wire.Bind(new(ports.RdbmsChargesRepository), new(*chargesrepo.Repository)),
 
 		//Services
 		countriessrv.New,
@@ -75,7 +72,7 @@ func InitializeApp(
 		userssrv.New,
 		enquiriessrv.New,
 
-        bqsrv.New,
+		bqsrv.New,
 
 		//Service Bindings
 		wire.Bind(new(ports.CountriesService), new(*countriessrv.Service)),
@@ -84,15 +81,13 @@ func InitializeApp(
 		wire.Bind(new(ports.EnquiriesService), new(*enquiriessrv.Service)),
 		wire.Bind(new(ports.BqService), new(*bqsrv.Service)),
 
-
-
 		//RouteHandlers
 		countries.NewHandler,
 		currencies.NewHandler,
 		users.NewHandler,
 		enquiries.NewHandler,
 
-        bq.NewHandler,
+		bq.NewHandler,
 		// accounts.NewHandler,
 
 		//RouteHandlerBindings
@@ -101,7 +96,7 @@ func InitializeApp(
 		wire.Bind(new(users.RoutesHandler), new(*users.Handler)),
 		wire.Bind(new(enquiries.RoutesHandler), new(*enquiries.Handler)),
 
-        wire.Bind(new(bq.RoutesHandler), new(*bq.Handler)),
+		wire.Bind(new(bq.RoutesHandler), new(*bq.Handler)),
 		// wire.Bind(new(accounts.RoutesHandler), new(*accounts.Handler)),
 
 		//Group Routes
@@ -110,10 +105,9 @@ func InitializeApp(
 		users.New,
 		enquiries.New,
 
-        bq.New,
+		bq.New,
 		// accounts.New,
 		v1.New,
-		
 
 		//Group Route Bindings
 		wire.Bind(new(countries.GroupRoutes), new(*countries.Routes)),
@@ -122,7 +116,7 @@ func InitializeApp(
 		// wire.Bind(new(accounts.GroupRoutes), new(*accounts.Routes)),
 		wire.Bind(new(enquiries.GroupRoutes), new(*enquiries.Routes)),
 
-        wire.Bind(new(bq.GroupRoutes), new(*bq.Routes)),
+		wire.Bind(new(bq.GroupRoutes), new(*bq.Routes)),
 		wire.Bind(new(v1.GroupRoutes), new(*v1.Routes)),
 
 		NewHttpEngine,

@@ -1,9 +1,9 @@
 package cargosrepo
 
 import (
+	"aircargo/internal/core/domain/repositories/rdbms"
+	"aircargo/pkg/logging"
 	"fmt"
-	"sagebackend/internal/core/domain/repositories/rdbms"
-	"sagebackend/pkg/logging"
 
 	"github.com/doug-martin/goqu/v9"
 )
@@ -25,15 +25,15 @@ func New(
 
 func (r *Repository) CreateOne(
 	enquiry_id int,
-		count int,
-		length int,
-		width int,
-		height int,
-		volume string,
-		weight int,
-		unit string,
-		total_volume string,
-		total_weight string,
+	count int,
+	length int,
+	width int,
+	height int,
+	volume string,
+	weight int,
+	unit string,
+	total_volume string,
+	total_weight string,
 ) error {
 	_, err := r.goquDB.Insert(TABLE).Prepared(true).Rows(
 		goqu.Record{
@@ -56,7 +56,6 @@ func (r *Repository) CreateOne(
 	return nil
 }
 
-
 func (r *Repository) SelectAll(enquiry_id int) ([]rdbms.Cargo, error) {
 	var cargos []rdbms.Cargo
 	err := r.goquDB.From(TABLE).Select().Where(goqu.C(ENQUIRY_ID).Eq(enquiry_id)).ScanStructs(&cargos)
@@ -65,7 +64,6 @@ func (r *Repository) SelectAll(enquiry_id int) ([]rdbms.Cargo, error) {
 	}
 	return cargos, nil
 }
-
 
 func (r *Repository) DeleteAll(enquiry_id int) error {
 	_, err := r.goquDB.Delete(TABLE).Where(goqu.C(ENQUIRY_ID).Eq(enquiry_id)).Executor().Exec()
