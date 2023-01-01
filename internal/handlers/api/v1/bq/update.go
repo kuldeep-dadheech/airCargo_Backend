@@ -1,6 +1,7 @@
 package bq
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -13,7 +14,7 @@ func (h *Handler) Update(ctx *gin.Context) {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-
+	fmt.Println(bqData, "data")
 	_, err := h.bqService.GetBqByID(bqData.Id)
 
 	if err != nil {
@@ -38,7 +39,7 @@ func (h *Handler) Update(ctx *gin.Context) {
 	)
 
 	if errr != nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err})
 		return
 	}
 	

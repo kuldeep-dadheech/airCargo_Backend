@@ -38,6 +38,7 @@ func (r *Repository) SelectOne(
 		CREATED_AT,
 		MODIFIED_AT,
 	).Where(goqu.C(EMAIL).Eq(email)).ScanStruct(&user)
+	// fmt.Println(rdbms.Users{},"dfgdfg")
 	if err != nil {
 		return rdbms.Users{}, false, err
 	}

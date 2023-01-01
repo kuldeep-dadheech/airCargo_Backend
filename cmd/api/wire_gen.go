@@ -12,12 +12,14 @@ import (
 	"aircargo/internal/core/services/countriessrv"
 	"aircargo/internal/core/services/currenciessrv"
 	"aircargo/internal/core/services/enquiriessrv"
+	"aircargo/internal/core/services/taskssrv"
 	"aircargo/internal/core/services/userssrv"
 	"aircargo/internal/handlers/api/v1"
 	"aircargo/internal/handlers/api/v1/bq"
 	"aircargo/internal/handlers/api/v1/countries"
 	"aircargo/internal/handlers/api/v1/currencies"
 	"aircargo/internal/handlers/api/v1/enquiries"
+	"aircargo/internal/handlers/api/v1/tasks"
 	"aircargo/internal/handlers/api/v1/users"
 	"aircargo/internal/repositories/pgdb/bqrepo"
 	"aircargo/internal/repositories/pgdb/cargosrepo"
@@ -25,6 +27,7 @@ import (
 	"aircargo/internal/repositories/pgdb/countriesrepo"
 	"aircargo/internal/repositories/pgdb/currenciesrepo"
 	"aircargo/internal/repositories/pgdb/enquiriesrepo"
+	"aircargo/internal/repositories/pgdb/tasksrepo"
 	"aircargo/internal/repositories/pgdb/usersrepo"
 )
 
@@ -62,12 +65,16 @@ func InitializeApp(appName configs.AppName, baseRouterPrefix configs.BaseRouterP
 	enquiriessrvService := enquiriessrv.New(enquiriesrepoRepository, cargosrepoRepository)
 	enquiriesHandler := enquiries.NewHandler(logger, enquiriessrvService)
 	enquiriesRoutes := enquiries.New(enquiriesHandler)
+	tasksrepoRepository := tasksrepo.New(logger, database)
+	taskssrvService := taskssrv.New(tasksrepoRepository)
+	tasksHandler := tasks.NewHandler(logger, taskssrvService)
+	tasksRoutes := tasks.New(tasksHandler)
 	chargesrepoRepository := chargesrepo.New(logger, database)
 	bqrepoRepository := bqrepo.New(logger, database)
 	bqsrvService := bqsrv.New(chargesrepoRepository, bqrepoRepository)
 	bqHandler := bq.NewHandler(logger, bqsrvService)
 	bqRoutes := bq.New(bqHandler)
-	v1Routes := v1.New(routes, currenciesRoutes, usersRoutes, enquiriesRoutes, bqRoutes)
+	v1Routes := v1.New(routes, currenciesRoutes, usersRoutes, enquiriesRoutes, tasksRoutes, bqRoutes)
 	engine := NewHttpEngine(v1Routes, baseRouterPrefix)
 	apiApp := NewApp(engine)
 	return apiApp, nil

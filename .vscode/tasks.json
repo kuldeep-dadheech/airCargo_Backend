@@ -6,7 +6,7 @@
     "options": {
       "env": {
         "PG_HOST": "localhost",
-        "PG_PORT": "55000",
+        "PG_PORT": "55001",
         "PG_USERNAME": "postgres",
         "PG_PASSWORD": "postgrespw",
         "PG_DATABASE": "wiz_backend",

@@ -47,7 +47,7 @@ func (h *Handler) Signin(ctx *gin.Context) {
 
 	tokens := &signinResponse{
 		person.Id,
-		"admin",
+		person.Role,
 	}
 	ctx.JSON(http.StatusOK, tokens)
 }

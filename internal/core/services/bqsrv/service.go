@@ -4,6 +4,7 @@ import (
 	"aircargo/internal/core/domain/repositories/rdbms"
 	"aircargo/internal/core/domain/services"
 	"aircargo/internal/core/ports"
+	"fmt"
 )
 
 type Service struct {
@@ -146,6 +147,8 @@ func (s *Service) UpdateBq(
 	profit_percentage string,
 	charges []services.Charge,
 ) error {
+	fmt.Println("here2")
+
 	err := s.bqRepository.UpdateOne(
 		id,
 		enquiry_id,
@@ -160,15 +163,17 @@ func (s *Service) UpdateBq(
 		total_sell_amount,
 		profit_percentage,
 	)
+	fmt.Println("gere2")
 	if err != nil {
+		fmt.Println(err)
 		return err
 	}
-
+	fmt.Println("gere3")
 	errf := s.chargesRepository.DeleteAll(id)
 	if errf != nil {
 		return errf
 	}
-
+	fmt.Println("gere4")
 	for _, charge := range charges {
 		err := s.chargesRepository.CreateOne(
 			charge.Bq_id,
@@ -185,6 +190,33 @@ func (s *Service) UpdateBq(
 			return err
 		}
 	}
+	fmt.Println("gere2")
+	// if !is_quote {
+	// 	to := "kuldeep.dadheech@wizfreight.com"
+	// 	from := "kuldeep.dadheech@wizfreight.com"
+	// 	subject := "Place Booking Alert!!"
+	// 	smtpHost := "smtp.office365.com"
+	// 	smtpPort := "587"
+	// 	body := "Hi Kuldeep, Now you can place your booking for the requested quote."
+	// 	fmt.Println("here1")
+	// 	msg := []byte("From:" + from + "\r\n" +
+	// 		"To:" + to + "\r\n" +
+	// 		subject + "\r\n\r\n" +
+	// 		body + "\r\n")
+	// 	// auth := &loginAuth{
+	// 	// 	username: from,
+	// 	// 	password: "We!!c0me#4321",
+	// 	// }
+	// 	auth := LoginAuth(from, "We!!c0me#4321")
+	// 	// auth := smtp.PlainAuth("", from, "We!!c0me#4321", "kuldeep.dadheech@wizfreight.com")
+	// 	fmt.Println("here2")
+	// 	err := smtp.SendMail(smtpHost+":"+smtpPort,
+	// 		auth, from, []string{to}, []byte(msg))
+	// 	if err != nil {
+	// 		return err
+	// 	}
+	// 	fmt.Println("ndsadas")
+	// }
 	return nil
 }
 
@@ -212,3 +244,31 @@ func (s *Service) GetAllBq() ([]services.Bq, error) {
 	}
 	return bqs, nil
 }
+
+type loginAuth struct {
+	username, password string
+}
+
+// func LoginAuth(username string, password string) smtp.Auth {
+// 	return &loginAuth{
+// 		username: username,
+// 		password: password,
+// 	}
+// }
+// func (a *loginAuth) Start(server *smtp.ServerInfo) (string, []byte, error) {
+// 	return "LOGIN", []byte{}, nil
+// }
+
+// func (a *loginAuth) Next(fromServer []byte, more bool) ([]byte, error) {
+// 	if more {
+// 		switch string(fromServer) {
+// 		case "Username:":
+// 			return []byte(a.username), nil
+// 		case "Password:":
+// 			return []byte(a.password), nil
+// 		default:
+// 			return nil, fmt.Errorf("something_went_wronng!")
+// 		}
+// 	}
+// 	return nil, nil
+// }

@@ -4,6 +4,7 @@ import (
 	"aircargo/internal/handlers/api/v1/countries"
 	"aircargo/internal/handlers/api/v1/currencies"
 	"aircargo/internal/handlers/api/v1/enquiries"
+	"aircargo/internal/handlers/api/v1/tasks"
 	"aircargo/internal/handlers/api/v1/users"
 
 	"aircargo/internal/handlers/api/v1/bq"
@@ -20,7 +21,7 @@ type Routes struct {
 	currencyRoutes  currencies.GroupRoutes
 	usersRoutes     users.GroupRoutes
 	enquiriesRoutes enquiries.GroupRoutes
-
+	tasksRoutes  	tasks.GroupRoutes
 	bqRoutes bq.GroupRoutes
 }
 
@@ -29,7 +30,7 @@ func New(
 	currencyRoutes currencies.GroupRoutes,
 	usersRoutes users.GroupRoutes,
 	enquiriesRoutes enquiries.GroupRoutes,
-
+	tasksRoutes  	tasks.GroupRoutes,
 	bqRoutes bq.GroupRoutes,
 ) *Routes {
 	return &Routes{
@@ -37,7 +38,7 @@ func New(
 		currencyRoutes:  currencyRoutes,
 		usersRoutes:     usersRoutes,
 		enquiriesRoutes: enquiriesRoutes,
-
+		tasksRoutes: tasksRoutes,
 		bqRoutes: bqRoutes,
 	}
 }
@@ -52,7 +53,7 @@ func (ro *Routes) Initialize(prefix string, r gin.IRouter) {
 		ro.currencyRoutes.Initialize("/currencies", v1)
 		ro.usersRoutes.Initialize("/users", v1)
 		ro.enquiriesRoutes.Initialize("/enquiries", v1)
-
+		ro.tasksRoutes.Initialize("/tasks", v1)
 		ro.bqRoutes.Initialize("/bq", v1)
 	}
 }
